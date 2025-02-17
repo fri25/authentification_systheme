@@ -1,4 +1,4 @@
-# 🔐 Système d'Authentification Moderne
+# Système d'Authentification
 
 Un système d'authentification moderne et sécurisé avec une interface utilisateur élégante, développé en PHP et MySQL.
 
@@ -6,7 +6,7 @@ Un système d'authentification moderne et sécurisé avec une interface utilisat
 ![PHP Version](https://img.shields.io/badge/PHP-7.4+-green.svg)
 ![MySQL Version](https://img.shields.io/badge/MySQL-5.7+-orange.svg)
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
 - Inscription utilisateur avec validation
 - Connexion sécurisée
@@ -16,7 +16,7 @@ Un système d'authentification moderne et sécurisé avec une interface utilisat
 - Interface responsive
 - Design moderne et intuitif
 
-## 🚀 Installation
+##  Installation
 
 1. **Cloner le projet**
 ```bash
@@ -33,7 +33,7 @@ USE inscription;
 ```
 
 
-## 🔧 Technologies Utilisées
+##  Technologies Utilisées
 
 - **Frontend**
   - HTML5
@@ -55,7 +55,7 @@ USE inscription;
 - Protection CSRF
 - Échappement des données affichées
 
-## 📱 Responsive Design
+## Responsive Design
 
 L'interface s'adapte automatiquement à différentes tailles d'écran :
 - Ordinateurs de bureau
