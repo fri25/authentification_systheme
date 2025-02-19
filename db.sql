@@ -2,7 +2,7 @@ CREATE DATABASE connect_user;
 
 USE inscription;
 
-CREATE TABLE produits (
+CREATE TABLE inscription (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100),
     prenom DECIMAL(10,2),
