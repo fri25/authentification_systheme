@@ -46,51 +46,92 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Inscription</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1 class="text-3xl font-bold underline text-center">Inscription</h1>
+<body class="bg-gradient-to-br from-purple-100 via-indigo-100 to-blue-100 min-h-screen flex items-center justify-center">
+    <div class="max-w-md w-full mx-auto bg-white rounded-xl shadow-lg p-8 transform transition-all hover:shadow-xl">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Inscription</h1>
 
-    <form action="" method="post" class="max-w-md mx-auto mt-8 bg-white p-6 rounded shadow">
+        <!-- Affichage des erreurs -->
         <?php if (!empty($error)): ?>
-            <div class="mb-4 p-2 bg-red-100 text-red-700 border border-red-400 rounded">
+            <div class="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg text-sm">
                 <?= htmlspecialchars($error) ?>
             </div>
         <?php endif; ?>
 
-        <div class="mb-4">
-            <label for="nom" class="block text-gray-700 text-sm font-bold mb-2">Nom</label>
-            <input type="text" name="nom" id="nom" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="<?= htmlspecialchars($nom ?? '') ?>">
-        </div>
+        <!-- Formulaire -->
+        <form action="" method="post">
+            <div class="mb-6">
+                <label for="nom" class="block text-gray-700 text-sm font-semibold mb-2">Nom</label>
+                <input 
+                    type="text" 
+                    name="nom" 
+                    id="nom" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200" 
+                    placeholder="Entrez votre nom" 
+                    value="<?= htmlspecialchars($nom ?? '') ?>"
+                >
+            </div>
 
-        <div class="mb-4">
-            <label for="prenom" class="block text-gray-700 text-sm font-bold mb-2">Prénom</label>
-            <input type="text" name="prenom" id="prenom" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="<?= htmlspecialchars($prenom ?? '') ?>">
-        </div>
+            <div class="mb-6">
+                <label for="prenom" class="block text-gray-700 text-sm font-semibold mb-2">Prénom</label>
+                <input 
+                    type="text" 
+                    name="prenom" 
+                    id="prenom" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200" 
+                    placeholder="Entrez votre prénom" 
+                    value="<?= htmlspecialchars($prenom ?? '') ?>"
+                >
+            </div>
 
-        <div class="mb-4">
-            <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Nom d'utilisateur</label>
-            <input type="text" name="username" id="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="<?= htmlspecialchars($username ?? '') ?>">
-        </div>
+            <div class="mb-6">
+                <label for="username" class="block text-gray-700 text-sm font-semibold mb-2">Nom d'utilisateur</label>
+                <input 
+                    type="text" 
+                    name="username" 
+                    id="username" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200" 
+                    placeholder="Choisissez un nom d'utilisateur" 
+                    value="<?= htmlspecialchars($username ?? '') ?>"
+                >
+            </div>
 
-        <div class="mb-4">
-            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Mot de passe</label>
-            <input type="password" name="password" id="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        </div>
+            <div class="mb-6">
+                <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Mot de passe</label>
+                <input 
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200" 
+                    placeholder="Entrez votre mot de passe"
+                >
+            </div>
 
-        <div class="mb-4">
-            <label for="confirm_password" class="block text-gray-700 text-sm font-bold mb-2">Confirmez le mot de passe</label>
-            <input type="password" name="confirm_password" id="confirm_password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        </div>
+            <div class="mb-6">
+                <label for="confirm_password" class="block text-gray-700 text-sm font-semibold mb-2">Confirmez le mot de passe</label>
+                <input 
+                    type="password" 
+                    name="confirm_password" 
+                    id="confirm_password" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200" 
+                    placeholder="Confirmez votre mot de passe"
+                >
+            </div>
 
-        <div class="text-center">
-            <input type="submit" value="S'inscrire" class="shadow bg-purple-700 hover:bg-purple-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer">
-        </div>
+            <div class="text-center">
+                <button 
+                    type="submit" 
+                    class="w-full bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-4 focus:ring-purple-300 transition duration-300"
+                >
+                    S'inscrire
+                </button>
+            </div>
 
-        <div class="flex items-center justify-center space-x-2 mt-4">
-            <p>Avez-vous un compte ?</p>
-            <a href="login.php" class="inline-flex justify-center py-2 px-4 text-base font-medium text-white rounded-lg bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-900">
-                Connectez-vous
-            </a>
-        </div>
-    </form>
+            <div class="mt-6 text-center">
+                <p class="text-gray-600 text-sm">Vous avez déjà un compte ? 
+                    <a href="login.php" class="text-purple-600 hover:text-purple-800 font-semibold transition duration-200">Connectez-vous</a>
+                </p>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
